@@ -1,9 +1,13 @@
-import { Locale } from "@/i18n/i18nConfig";
-import initTranslations from "../../i18n";
 import "./globals.css";
+
+import { Locale } from "@/i18n/i18nConfig";
+import initTranslations from "@/i18n";
+
 import TranslationsProvider from "@/components/providers/TranslationsProvider";
 import { TanstackProvider } from "@/components/providers/TanstackProvider";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import Header from "@/components/ui/Header";
+import Sidebar from "@/components/ui/Sidebar";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,10 +23,10 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       dir={dir}
-      className={`h-full antialiased`}
+      className="antialiased"
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body>
         <TanstackProvider>
           <ThemeProvider
             attribute="class"
@@ -35,7 +39,16 @@ export default async function RootLayout({ children, params }: LayoutProps) {
               locale={locale}
               namespaces={["dashboard"]}
             >
-              {children}
+              <main className="grid h-screen grid-cols-[280px_1fr]">
+                <Sidebar />
+
+                <div className="grid min-h-0 grid-rows-[80px_1fr]">
+                  <Header locale={locale} />
+                  <section className="min-h-0 overflow-y-scroll bg-background">
+                    {children}
+                  </section>
+                </div>
+              </main>
             </TranslationsProvider>
           </ThemeProvider>
         </TanstackProvider>
