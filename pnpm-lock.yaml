@@ -8,15 +8,27 @@ importers:
 
   .:
     dependencies:
+      i18next:
+        specifier: ^26.4.2
+        version: 26.4.2(typescript@5.9.3)
+      i18next-resources-to-backend:
+        specifier: ^1.2.3
+        version: 1.2.3
       next:
         specifier: 16.3.5
         version: 16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+      next-i18n-router:
+        specifier: ^5.5.8
+        version: 5.5.8(next@16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8))
       react:
         specifier: 19.2.8
         version: 19.2.8
       react-dom:
         specifier: 19.2.8
         version: 19.2.8(react@19.2.8)
+      react-i18next:
+        specifier: ^17.0.14
+        version: 17.0.14(i18next@26.4.2(typescript@5.9.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@5.9.3)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -104,6 +116,10 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
+  '@babel/runtime@7.29.7':
+    resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/template@7.29.7':
     resolution: {integrity: sha512-puq+Gf35oI24FeN11LkoUQFqv9uwNeWpxXZi/Ji3rRIoKAzKnxRaZ+Gkj0vKS9ZCiTESfng1N9LyOyXvo+m+Gg==}
     engines: {node: '>=6.9.0'}
@@ -171,6 +187,9 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@formatjs/intl-localematcher@0.6.2':
+    resolution: {integrity: sha512-XOMO2Hupl0wdd172Y06h6kLpBz6Dv+J4okPLl4LPtzbr8f66WbIoy4ev98EBuZ6ZK4h5ydTN6XneT4QVpD7cdA==}
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -890,6 +909,10 @@ packages:
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
 
+  content-type@2.1.0:
+    resolution: {integrity: sha512-mj7UPXE0jaqaOsukNZRUEfEi2AcL7C/vwmwcHV0O97eO1E1pxBZuyjlZrx5seTaNBg1U6+o35wpa35Qfcc+7ag==}
+    engines: {node: '>=18'}
+
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
@@ -1271,6 +1294,20 @@ packages:
   hermes-parser@0.25.1:
     resolution: {integrity: sha512-6pEjquH3rqaI6cYAXYPcz9MS4rY6R4ngRgrgfDshRptUZIc3lw0MCIJIGDj9++mfySOuPTHB4nrSW99BCvOPIA==}
 
+  html-parse-stringify@4.0.1:
+    resolution: {integrity: sha512-0zHsZJrK7S3K2aucXWL6ycoYJ/iNtIcFHC/nYQgFklPtrv5LpJctIiSCroWZWeuoXvuyFdzp6KzjJQ+OT5MfFw==}
+
+  i18next-resources-to-backend@1.2.3:
+    resolution: {integrity: sha512-8Y/LLAm5fqZc2ckQxtTWbu75ndjNLzF7mcYl6rhc4g+WBopIsG3YhdYqF5qhJy64tlYhlU2KSSnEgW3gGHLqwg==}
+
+  i18next@26.4.2:
+    resolution: {integrity: sha512-RX+R0VLg13IbvRuJSxnqykUFS9vQZTl8wYpWPCIUDWVrSGjsQywB5Y+pjzrkboxGAuYfJZVH1InFTdgBdxq6ug==}
+    peerDependencies:
+      typescript: ^5 || ^6 || ^7
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
@@ -1589,6 +1626,15 @@ packages:
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
+  negotiator@1.1.0:
+    resolution: {integrity: sha512-NMPBRMJgiQHjbd8phG3Vebdx4kZ1H121rbl5IkMqeOsahptB9BKo/d7oJ3zTXqTgagn2bWlNSXkh0QUGM31RYg==}
+    engines: {node: '>=18'}
+
+  next-i18n-router@5.5.8:
+    resolution: {integrity: sha512-m6wFayccaeUBjvTmaWoBovinHchqgmzqnTJHVdmfvwBjKiS8oPQDogGZyNmZBhFeFtWSjI9UOEoxL9lzodw3lg==}
+    peerDependencies:
+      next: ^13 || ^14 || ^15 || ^16
+
   next@16.3.5:
     resolution: {integrity: sha512-MdtsTgzyfCPRLC6uJ1mN8ao7lyJ4BB0U6Inhnx3gta1UcCIdHK3yxLG0E8OWQteWD8/Q0qb8A5o7wJaL8M9y2w==}
     engines: {node: '>=20.9.0'}
@@ -1722,6 +1768,22 @@ packages:
     resolution: {integrity: sha512-rVprimfGBG3DR+Tq0IQG2DT5PxKth1WIGDmj5yPmlzr4YBe7uyE+Du4oVqTDXZSHGGGXRtTJEGSSePyQCMBglQ==}
     peerDependencies:
       react: ^19.2.8
+
+  react-i18next@17.0.14:
+    resolution: {integrity: sha512-ZpMBfJL3BiXPuYHj5QMY1GwvKJNhE1vCxOJQ8BoMBdHP5XONTfi/Qss1nuRlnFdIl72PKo2jPmw+fxuLjRFgaQ==}
+    peerDependencies:
+      i18next: '>= 26.2.0'
+      react: '>= 16.8.0'
+      react-dom: '*'
+      react-native: '*'
+      typescript: ^5 || ^6 || ^7
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+      typescript:
+        optional: true
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -1967,6 +2029,11 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
+  use-sync-external-store@1.7.0:
+    resolution: {integrity: sha512-6L+EeigHMQhdaIPNIFUKwfWJSwWFQ8gJbJ2DLOs5sDIegTwR9fRxvnM3uciHKjIZhFz+KAv2emhWMRvDmMcY8A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
   which-boxed-primitive@1.1.1:
     resolution: {integrity: sha512-TbX3mj8n0odCBFVlY8AxkqcHASw3L60jIuF8jFP78az3C2YhmGvqbHBpAjTRH2/xqYunrJ9g1jSyjCjpoWzIAA==}
     engines: {node: '>= 0.4'}
@@ -2089,6 +2156,8 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.8
 
+  '@babel/runtime@7.29.7': {}
+
   '@babel/template@7.29.7':
     dependencies:
       '@babel/code-frame': 7.29.7
@@ -2183,6 +2252,10 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@formatjs/intl-localematcher@0.6.2':
+    dependencies:
+      tslib: 2.8.1
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -2802,6 +2875,8 @@ snapshots:
 
   concat-map@0.0.1: {}
 
+  content-type@2.1.0: {}
+
   convert-source-map@2.0.0: {}
 
   cross-spawn@7.0.6:
@@ -3342,6 +3417,16 @@ snapshots:
     dependencies:
       hermes-estree: 0.25.1
 
+  html-parse-stringify@4.0.1: {}
+
+  i18next-resources-to-backend@1.2.3:
+    dependencies:
+      '@babel/runtime': 7.29.7
+
+  i18next@26.4.2(typescript@5.9.3):
+    optionalDependencies:
+      typescript: 5.9.3
+
   ignore@5.3.2: {}
 
   ignore@7.0.9: {}
@@ -3626,6 +3711,16 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
+  negotiator@1.1.0:
+    dependencies:
+      content-type: 2.1.0
+
+  next-i18n-router@5.5.8(next@16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)):
+    dependencies:
+      '@formatjs/intl-localematcher': 0.6.2
+      negotiator: 1.1.0
+      next: 16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+
   next@16.3.5(@babel/core@7.29.7(supports-color@7.2.0))(@types/node@20.19.43)(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       '@next/env': 16.3.5
@@ -3772,6 +3867,17 @@ snapshots:
     dependencies:
       react: 19.2.8
       scheduler: 0.27.0
+
+  react-i18next@17.0.14(i18next@26.4.2(typescript@5.9.3))(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@5.9.3):
+    dependencies:
+      '@babel/runtime': 7.29.7
+      html-parse-stringify: 4.0.1
+      i18next: 26.4.2(typescript@5.9.3)
+      react: 19.2.8
+      use-sync-external-store: 1.7.0(react@19.2.8)
+    optionalDependencies:
+      react-dom: 19.2.8(react@19.2.8)
+      typescript: 5.9.3
 
   react-is@16.13.1: {}
 
@@ -4128,6 +4234,10 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  use-sync-external-store@1.7.0(react@19.2.8):
+    dependencies:
+      react: 19.2.8
 
   which-boxed-primitive@1.1.1:
     dependencies:

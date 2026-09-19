@@ -9,9 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "i18next": "^26.4.2",
+    "i18next-resources-to-backend": "^1.2.3",
     "next": "16.3.5",
+    "next-i18n-router": "^5.5.8",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "react-i18next": "^17.0.14"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
