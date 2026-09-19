@@ -1,1 +1,105 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary: #0f766e;
+  --on-primary: #fff;
+
+  --secondary: #4f46e5;
+  --on-secondary: #fff;
+
+  --success: #16a34a;
+  --on-success: #fff;
+
+  --warning: #d97706;
+  --on-warning: #fff;
+
+  --error: #dc2626;
+  --on-error: #fff;
+
+  --info: #0284c7;
+  --on-info: #fff;
+
+  --background: #f8fafc;
+  --on-background: #0f172a;
+  --surface: #fff;
+  --on-surface: #0f172a;
+  --surface-variant: #f1f5f9;
+  --on-surface-variant: #334155;
+
+  --outline: #cbd5e1;
+  --outline-variant: #e2e8f0;
+}
+
+.dark {
+  --primary: #2dd4bf;
+  --on-primary: #042f2e;
+
+  --secondary: #818cf8;
+  --on-secondary: #1e1b4b;
+
+  --success: #4ade80;
+  --on-success: #14532d;
+
+  --warning: #fbbf24;
+  --on-warning: #78350f;
+
+  --error: #f87171;
+  --on-error: #7f1d1d;
+
+  --info: #38bdf8;
+  --on-info: #082f49;
+
+  --background: #0f172a;
+  --on-background: #f8fafc;
+  --surface: #1e293b;
+  --on-surface: #f8fafc;
+  --surface-variant: #334155;
+  --on-surface-variant: #cbd5e1;
+
+  --outline: #475569;
+  --outline-variant: #334155;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-on-primary: var(--on-primary);
+
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+
+  --color-success: var(--success);
+  --color-on-success: var(--on-success);
+
+  --color-warning: var(--warning);
+  --color-on-warning: var(--on-warning);
+
+  --color-error: var(--error);
+  --color-on-error: var(--on-error);
+
+  --color-info: var(--info);
+  --color-on-info: var(--on-info);
+
+  --color-background: var(--background);
+  --color-on-background: var(--on-background);
+  --color-surface: var(--surface);
+  --color-on-surface: var(--on-surface);
+  --color-surface-variant: var(--surface-variant);
+  --color-on-surface-variant: var(--on-surface-variant);
+
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+
+  --shadow-xs: 0 1px 2px rgb(15 23 42 / 0.05);
+  --shadow-sm: 0 1px 3px rgb(15 23 42 / 0.08);
+  --shadow-md: 0 4px 6px rgb(15 23 42 / 0.07);
+  --shadow-lg: 0 10px 15px rgb(15 23 42 / 0.1);
+}

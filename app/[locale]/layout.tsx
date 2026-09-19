@@ -3,6 +3,7 @@ import initTranslations from "../../i18n";
 import "./globals.css";
 import TranslationsProvider from "@/components/providers/TranslationsProvider";
 import { TanstackProvider } from "@/components/providers/TanstackProvider";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -15,16 +16,28 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   const { resources } = await initTranslations(locale, ["dashboard"]);
 
   return (
-    <html lang={locale} dir={dir} className={`h-full antialiased`}>
+    <html
+      lang={locale}
+      dir={dir}
+      className={`h-full antialiased`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col">
         <TanstackProvider>
-          <TranslationsProvider
-            resources={resources}
-            locale={locale}
-            namespaces={["dashboard"]}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
-            {children}
-          </TranslationsProvider>
+            <TranslationsProvider
+              resources={resources}
+              locale={locale}
+              namespaces={["dashboard"]}
+            >
+              {children}
+            </TranslationsProvider>
+          </ThemeProvider>
         </TanstackProvider>
       </body>
     </html>
