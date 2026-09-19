@@ -3,7 +3,7 @@
 import { createInstance, type Resource } from "i18next";
 import { I18nextProvider } from "react-i18next";
 
-import initTranslations from ".";
+import initTranslations from "../../i18n";
 import type { Locale } from "@/i18n/i18nConfig";
 
 type TranslationsProviderProps = {

@@ -1,7 +1,8 @@
 import { Locale } from "@/i18n/i18nConfig";
 import initTranslations from "../../i18n";
 import "./globals.css";
-import TranslationsProvider from "@/i18n/TranslationsProvider";
+import TranslationsProvider from "@/components/providers/TranslationsProvider";
+import { TanstackProvider } from "@/components/providers/TanstackProvider";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,13 +17,15 @@ export default async function RootLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} dir={dir} className={`h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <TranslationsProvider
-          resources={resources}
-          locale={locale}
-          namespaces={["dashboard"]}
-        >
-          {children}
-        </TranslationsProvider>
+        <TanstackProvider>
+          <TranslationsProvider
+            resources={resources}
+            locale={locale}
+            namespaces={["dashboard"]}
+          >
+            {children}
+          </TranslationsProvider>
+        </TanstackProvider>
       </body>
     </html>
   );
