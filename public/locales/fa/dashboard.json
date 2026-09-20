@@ -1,3 +1,6 @@
 {
-  "dashboard": "داشبورد"
+  "active_records": "رکوردهای فعال",
+  "average_scores": "میانگین امتیازات",
+  "dashboard": "داشبورد",
+  "total_records": "کل رکوردها"
 }

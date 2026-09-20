@@ -1,3 +1,6 @@
 {
-  "dashboard": "Dashboard"
+  "active_records": "Active Records",
+  "average_scores": "Average Score",
+  "dashboard": "Dashboard",
+  "total_records": "Total Records"
 }
