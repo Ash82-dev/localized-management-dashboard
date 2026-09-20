@@ -39,8 +39,8 @@ export default async function RootLayout({ children, params }: LayoutProps) {
               locale={locale}
               namespaces={["dashboard"]}
             >
-              <main className="grid h-screen grid-cols-[280px_1fr]">
-                <Sidebar />
+              <main className="grid h-screen grid-cols-[auto_1fr]">
+                <Sidebar direction={dir} />
 
                 <div className="grid min-h-0 grid-rows-[80px_1fr]">
                   <Header locale={locale} />

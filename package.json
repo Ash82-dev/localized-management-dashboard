@@ -11,6 +11,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.103.1",
     "axios": "^1.20.0",
+    "clsx": "^2.1.1",
     "i18next": "^26.4.2",
     "i18next-resources-to-backend": "^1.2.3",
     "lucide-react": "^1.47.0",
@@ -19,7 +20,8 @@
     "next-themes": "^0.4.6",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "react-i18next": "^17.0.14"
+    "react-i18next": "^17.0.14",
+    "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
