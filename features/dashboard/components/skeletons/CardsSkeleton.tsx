@@ -1,6 +1,6 @@
 import SummaryCardSkeleton from "./SummaryCardSkeleton";
 
-function CardsAndTableSkeleton() {
+function CardsSkeleton() {
   return (
     <section className="grid w-full grid-cols-1 place-items-center justify-around gap-5 md:grid-cols-3">
       {Array.from({ length: 3 }, (_, i) => (
@@ -10,4 +10,4 @@ function CardsAndTableSkeleton() {
   );
 }
 
-export default CardsAndTableSkeleton;
+export default CardsSkeleton;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRecords } from "../use-records";
+import { useRecords } from "../hooks/use-records";
 import SummaryCard from "./SummaryCard";
 import { toSummaryRecords } from "../toSummaryRecords";
 

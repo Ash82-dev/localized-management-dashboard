@@ -1,9 +1,13 @@
+export type Status = "active" | "inactive";
+
 export interface Record {
   id: number;
+  name: string;
   category: string;
-  status: "active" | "inactive";
+  status: Status;
   score: number;
   description: string;
+  createdAt: string;
 }
 
 interface Meta {
@@ -24,7 +28,7 @@ export interface RecordsParams {
   page?: number;
   limit?: number | "all";
   search?: string;
-  status?: "active" | "inactive";
+  status?: Status;
 }
 
 export interface RecordsSummary {

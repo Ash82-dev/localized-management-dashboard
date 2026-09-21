@@ -1,4 +1,6 @@
 {
+  "language_placeholder": "Language",
   "next": "Next",
-  "previous": "Previous"
+  "previous": "Previous",
+  "search_label": "Search"
 }

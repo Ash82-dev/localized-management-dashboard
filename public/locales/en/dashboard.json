@@ -2,6 +2,16 @@
   "active_records": "Active Records",
   "average_scores": "Average Score",
   "dashboard": "Dashboard",
+  "description_column_label": "Description",
+  "filter_placeholder": "Filter by status",
+  "id_column_label": "Id",
+  "name_column_label": "Name",
   "rows_per_page": "Rows per page",
+  "score_column_label": "Score",
+  "search_by_name": "Search by name",
+  "status_active_label": "Active",
+  "status_all_label": "All",
+  "status_column_label": "Status",
+  "status_inactive_label": "Inactive",
   "total_records": "Total Records"
 }

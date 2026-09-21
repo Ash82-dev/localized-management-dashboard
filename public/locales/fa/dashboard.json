@@ -2,6 +2,16 @@
   "active_records": "رکوردهای فعال",
   "average_scores": "میانگین امتیازات",
   "dashboard": "داشبورد",
+  "description_column_label": "توضیحات",
+  "filter_placeholder": "فیلتر بر اساس وضعیت",
+  "id_column_label": "شناسه",
+  "name_column_label": "نام",
   "rows_per_page": "ردیف در هر صفحه",
+  "score_column_label": "امتیاز",
+  "search_by_name": "جستجو بر اساس نام",
+  "status_active_label": "فعال",
+  "status_all_label": "همه",
+  "status_column_label": "وضعیت",
+  "status_inactive_label": "غیرفعال",
   "total_records": "کل رکوردها"
 }

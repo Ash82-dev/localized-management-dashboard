@@ -21,7 +21,7 @@ const localeItems = [
 ];
 
 function LanguageSwitcher() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const currentLocale = i18n.language;
   const router = useRouter();
   const currentPathname = usePathname();
@@ -49,18 +49,6 @@ function LanguageSwitcher() {
   };
 
   return (
-    // <select
-    //   className="text-md h-9 cursor-pointer rounded-md bg-transparent px-2.5 hover:bg-surface-variant"
-    //   onChange={handleSwitchLanguage}
-    //   value={currentLocale}
-    // >
-    //   <option className="bg-surface text-on-surface" value="en">
-    //     English
-    //   </option>
-    //   <option className="bg-surface text-on-surface" value="fa">
-    //     فارسی
-    //   </option>
-    // </select>
     <Select
       items={localeItems}
       defaultValue={currentLocale}
@@ -69,10 +57,10 @@ function LanguageSwitcher() {
         handleSwitchLanguage(value);
       }}
     >
-      <SelectTrigger className="w-25">
-        <SelectValue placeholder="Language" />
+      <SelectTrigger className="w-25 rounded-sm">
+        <SelectValue placeholder={t("common:language_placeholder")} />
       </SelectTrigger>
-      <SelectContent alignItemWithTrigger={false}>
+      <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
         <SelectGroup>
           {localeItems.map((item) => (
             <SelectItem key={item.value} value={item.value}>

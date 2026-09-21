@@ -1,19 +1,17 @@
 import { Suspense } from "react";
-import initTranslations from "@/i18n";
-import { PageParams } from "@/types/routes-types";
 import SummaryCardBox from "@/features/dashboard/components/SummaryCardBox";
-import CardsAndTableSkeleton from "@/features/dashboard/components/CardsAndTableSkeleton";
-import RecordsTable from "@/features/dashboard/components/RecordsTable";
+import RecordsTable from "@/features/dashboard/components/table/RecordsTable";
+import CardsSkeleton from "@/features/dashboard/components/skeletons/CardsSkeleton";
+import TableSkeleton from "@/features/dashboard/components/skeletons/TableSkeleton";
 
-async function Page({ params }: PageParams) {
-  const { locale } = await params;
-  const { t } = await initTranslations(locale, ["dashboard"]);
-
+async function Page() {
   return (
-    <div className="flex grow flex-col items-center gap-5 px-5 py-7">
-      <Suspense fallback={<CardsAndTableSkeleton />}>
+    <div className="flex grow flex-col items-center gap-7 px-5 py-7">
+      <Suspense fallback={<CardsSkeleton />}>
         <SummaryCardBox />
+      </Suspense>
 
+      <Suspense fallback={<TableSkeleton />}>
         <RecordsTable />
       </Suspense>
     </div>

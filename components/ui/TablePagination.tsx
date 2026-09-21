@@ -19,7 +19,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useUpdateUrl } from "@/features/dashboard/hooks/use-update-url";
 
 interface RecordsPaginationProps {
   page: number;
@@ -35,25 +35,7 @@ function TablePagination({
   pageSizeOptions = [10, 20, 50],
 }: RecordsPaginationProps) {
   const { t } = useTranslation();
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  function updateParams(updates: Record<string, string | null>) {
-    const params = new URLSearchParams(searchParams.toString());
-
-    for (const [key, value] of Object.entries(updates)) {
-      if (value === null) {
-        params.delete(key);
-      } else {
-        params.set(key, value);
-      }
-    }
-
-    router.replace(`${pathname}?${params.toString()}`, {
-      scroll: false,
-    });
-  }
+  const { updateParams } = useUpdateUrl();
 
   function handlePageChange(page: number) {
     updateParams({
@@ -62,16 +44,19 @@ function TablePagination({
   }
 
   function handlePageSizeChange(limit: number) {
-    updateParams({
-      page: "1",
-      limit: String(limit),
-    });
+    updateParams(
+      {
+        limit: String(limit),
+      },
+      true,
+    );
   }
 
   const renderPage = (pageNumber: number) => (
     <PaginationItem key={pageNumber}>
       <PaginationLink
         href="#"
+        className="rounded-sm"
         isActive={pageNumber === page}
         onClick={(event) => {
           event.preventDefault();
@@ -94,11 +79,11 @@ function TablePagination({
             handlePageSizeChange(Number(value));
           }}
         >
-          <SelectTrigger className="w-25">
+          <SelectTrigger className="w-25 rounded-sm">
             <SelectValue />
           </SelectTrigger>
 
-          <SelectContent alignItemWithTrigger={false}>
+          <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
             {pageSizeOptions.map((size) => (
               <SelectItem key={size} value={String(size)}>
                 {size}

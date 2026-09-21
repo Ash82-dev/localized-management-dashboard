@@ -1,4 +1,6 @@
 {
+  "language_placeholder": "زبان",
   "next": "بعدی",
-  "previous": "قبلی"
+  "previous": "قبلی",
+  "search_label": "جستجو"
 }
