@@ -2,5 +2,6 @@
   "active_records": "Active Records",
   "average_scores": "Average Score",
   "dashboard": "Dashboard",
+  "rows_per_page": "Rows per page",
   "total_records": "Total Records"
 }

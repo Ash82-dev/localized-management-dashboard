@@ -1,9 +1,10 @@
-import { Record, RecordsSummary } from "./types";
+import { RecordsResponse, RecordsSummary } from "./types";
 
-export function toSummaryRecords(
-  records: Record[] | undefined,
-): RecordsSummary[] {
-  const totalRecords = records?.length ?? 0;
+export function toSummaryRecords({
+  data: records,
+  meta,
+}: RecordsResponse): RecordsSummary[] {
+  const totalRecords = meta.total ?? 0;
 
   const activeRecords =
     records?.filter((record) => record.status === "active").length ?? 0;

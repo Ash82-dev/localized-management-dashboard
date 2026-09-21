@@ -5,7 +5,7 @@ import SummaryCard from "./SummaryCard";
 import { toSummaryRecords } from "../toSummaryRecords";
 
 function SummaryCardBox() {
-  const { records } = useRecords();
+  const { records } = useRecords({ limit: "all" });
 
   return (
     <section className="grid w-full grid-cols-1 place-items-center justify-around gap-5 md:grid-cols-3">

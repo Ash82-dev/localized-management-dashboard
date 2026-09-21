@@ -1,11 +1,24 @@
 "use client";
 
-import { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 import { i18nConfig } from "@/i18n/i18nConfig";
+
+const localeItems = [
+  { label: "English", value: "en" },
+  { label: "فارسی", value: "fa" },
+];
 
 function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -13,9 +26,7 @@ function LanguageSwitcher() {
   const router = useRouter();
   const currentPathname = usePathname();
 
-  const handleSwitchLanguage = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newLocale = e.target.value;
-
+  const handleSwitchLanguage = (newLocale: string) => {
     // set cookie
     const days = 30;
     const date = new Date();
@@ -38,18 +49,39 @@ function LanguageSwitcher() {
   };
 
   return (
-    <select
-      className="text-md h-9 cursor-pointer rounded-md bg-transparent px-2.5 hover:bg-surface-variant"
-      onChange={handleSwitchLanguage}
-      value={currentLocale}
+    // <select
+    //   className="text-md h-9 cursor-pointer rounded-md bg-transparent px-2.5 hover:bg-surface-variant"
+    //   onChange={handleSwitchLanguage}
+    //   value={currentLocale}
+    // >
+    //   <option className="bg-surface text-on-surface" value="en">
+    //     English
+    //   </option>
+    //   <option className="bg-surface text-on-surface" value="fa">
+    //     فارسی
+    //   </option>
+    // </select>
+    <Select
+      items={localeItems}
+      defaultValue={currentLocale}
+      onValueChange={(value) => {
+        if (value === null) return;
+        handleSwitchLanguage(value);
+      }}
     >
-      <option className="bg-surface text-on-surface" value="en">
-        English
-      </option>
-      <option className="bg-surface text-on-surface" value="fa">
-        فارسی
-      </option>
-    </select>
+      <SelectTrigger className="w-25">
+        <SelectValue placeholder="Language" />
+      </SelectTrigger>
+      <SelectContent alignItemWithTrigger={false}>
+        <SelectGroup>
+          {localeItems.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 }
 
