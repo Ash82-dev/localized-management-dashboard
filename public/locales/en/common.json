@@ -1,5 +1,8 @@
 {
   "language_placeholder": "Language",
+  "lbl_cancel": "Cancel",
+  "lbl_save": "Save",
+  "msg_field_required": "This field cannot be empty",
   "next": "Next",
   "previous": "Previous",
   "search_label": "Search"

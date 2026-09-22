@@ -1,5 +1,6 @@
 import { api } from "@/lib/client";
-import { RecordsParams, RecordsResponse } from "./types";
+import { Record, RecordsParams, RecordsResponse } from "./types";
+import { RecordFormData } from "./schema";
 
 export async function getRecords({
   page = 1,
@@ -15,4 +16,16 @@ export async function getRecords({
       status,
     },
   });
+}
+
+export async function getRecord(id: number): Promise<Record> {
+  return await api.get<Record>(`/records/${id}`);
+}
+
+export async function createRecord(record: RecordFormData) {
+  await api.post<Record>("/records", record);
+}
+
+export async function updateRecord(id: number, record: RecordFormData) {
+  await api.patch<Record>(`/records/${id}`, record);
 }

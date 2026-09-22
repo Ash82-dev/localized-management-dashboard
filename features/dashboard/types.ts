@@ -1,9 +1,21 @@
-export type Status = "active" | "inactive";
+export const statusOptions = ["active", "inactive"] as const;
+
+export type Status = (typeof statusOptions)[number];
+
+export const categoryOptions = [
+  "development",
+  "design",
+  "marketing",
+  "operations",
+  "research",
+] as const;
+
+export type Category = (typeof categoryOptions)[number];
 
 export interface Record {
   id: number;
   name: string;
-  category: string;
+  category: Category;
   status: Status;
   score: number;
   description: string;

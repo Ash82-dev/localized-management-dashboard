@@ -1,10 +1,11 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslation } from "react-i18next";
-import { Button } from "@/components/ui/button";
-import { Field } from "@/components/ui/field";
+
 import { useUpdateUrl } from "../../hooks/use-update-url";
+import { Status } from "../../types";
 
 import {
   Select,
@@ -14,10 +15,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Status } from "../../types";
-import { useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Field } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import RecordFormDialog from "../RecordDialogForm";
 
 function TableActionsRow() {
+  const [isOpen, setOpen] = useState<boolean>(false);
   const { t } = useTranslation();
   const { updateParams } = useUpdateUrl();
   const searchParams = useSearchParams();
@@ -46,33 +50,43 @@ function TableActionsRow() {
             className="rounded-sm"
             placeholder={t("search_by_name")}
           />
-          <Button className="rounded-sm" type="submit">
+          <Button className="cursor-pointer rounded-sm" type="submit">
             {t("common:search_label")}
           </Button>
         </Field>
       </form>
 
-      <Select
-        items={statusFilterOptions}
-        defaultValue={status}
-        onValueChange={(value) => {
-          if (value === null) return;
-          updateParams({ status: value as Status }, true);
-        }}
-      >
-        <SelectTrigger className="w-30 rounded-sm">
-          <SelectValue placeholder={t("filter_placeholder")} />
-        </SelectTrigger>
-        <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
-          <SelectGroup>
-            {statusFilterOptions.map((item) => (
-              <SelectItem key={item.value} value={item.value}>
-                {item.label}
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      <div className="flex items-center gap-2">
+        <Button
+          className="cursor-pointer rounded-sm"
+          onClick={() => setOpen(true)}
+        >
+          {t("create_row_label")}
+        </Button>
+        <RecordFormDialog isOpen={isOpen} setOpen={setOpen} />
+
+        <Select
+          items={statusFilterOptions}
+          defaultValue={status}
+          onValueChange={(value) => {
+            if (value === null) return;
+            updateParams({ status: value as Status }, true);
+          }}
+        >
+          <SelectTrigger className="w-30 rounded-sm">
+            <SelectValue placeholder={t("filter_placeholder")} />
+          </SelectTrigger>
+          <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
+            <SelectGroup>
+              {statusFilterOptions.map((item) => (
+                <SelectItem key={item.value} value={item.value}>
+                  {item.label}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 }

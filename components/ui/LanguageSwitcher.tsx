@@ -57,10 +57,10 @@ function LanguageSwitcher() {
         handleSwitchLanguage(value);
       }}
     >
-      <SelectTrigger className="w-25 rounded-sm">
+      <SelectTrigger className="w-25">
         <SelectValue placeholder={t("common:language_placeholder")} />
       </SelectTrigger>
-      <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
+      <SelectContent alignItemWithTrigger={false}>
         <SelectGroup>
           {localeItems.map((item) => (
             <SelectItem key={item.value} value={item.value}>

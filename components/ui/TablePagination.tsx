@@ -56,7 +56,6 @@ function TablePagination({
     <PaginationItem key={pageNumber}>
       <PaginationLink
         href="#"
-        className="rounded-sm"
         isActive={pageNumber === page}
         onClick={(event) => {
           event.preventDefault();
@@ -79,11 +78,11 @@ function TablePagination({
             handlePageSizeChange(Number(value));
           }}
         >
-          <SelectTrigger className="w-25 rounded-sm">
+          <SelectTrigger className="w-25">
             <SelectValue />
           </SelectTrigger>
 
-          <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
+          <SelectContent alignItemWithTrigger={false}>
             {pageSizeOptions.map((size) => (
               <SelectItem key={size} value={String(size)}>
                 {size}

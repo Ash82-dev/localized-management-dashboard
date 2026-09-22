@@ -1,5 +1,8 @@
 {
   "language_placeholder": "زبان",
+  "lbl_cancel": "لغو",
+  "lbl_save": "ذخیره",
+  "msg_field_required": "این فیلد نمی‌تواند خالی باشد",
   "next": "بعدی",
   "previous": "قبلی",
   "search_label": "جستجو"

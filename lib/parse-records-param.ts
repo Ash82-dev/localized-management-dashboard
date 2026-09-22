@@ -1,9 +1,8 @@
-import { Status } from "@/features/dashboard/types";
+import { Status, statusOptions } from "@/features/dashboard/types";
 
 const DEFAULT_PAGE = 1;
 const DEFAULT_LIMIT = 10;
 const ALLOWED_LIMITS = [10, 20, 50];
-const ALLOWED_STATUSES = ["active", "inactive"];
 
 export interface RecordsParams {
   page: number;
@@ -47,7 +46,7 @@ export function parseRecordsParams(
     params.search = searchValue;
   }
 
-  if (statusValue && ALLOWED_STATUSES.includes(statusValue as Status)) {
+  if (statusValue && statusOptions.includes(statusValue as Status)) {
     params.status = statusValue as Status;
   }
 

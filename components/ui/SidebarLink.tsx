@@ -19,10 +19,10 @@ function SidebarLink({ item, isOpen }: SidebarLinkProps) {
     <Link
       href={`/${i18n.language}/${item.route}`}
       className={cn(
-        "flex h-10 items-center rounded-sm px-3",
+        "flex h-10 items-center px-3",
         "bg-surface text-on-surface hover:bg-surface-variant hover:text-on-surface-variant",
         isActive &&
-          "bg-primary text-on-primary hover:bg-primary hover:text-on-primary",
+          "rounded-sm bg-primary text-on-primary hover:bg-primary hover:text-on-primary",
       )}
     >
       {isOpen ? t(item.text) : <item.icon size={20} />}

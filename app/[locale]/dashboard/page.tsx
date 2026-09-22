@@ -6,7 +6,7 @@ import TableSkeleton from "@/features/dashboard/components/skeletons/TableSkelet
 
 async function Page() {
   return (
-    <div className="flex grow flex-col items-center gap-7 px-5 py-7">
+    <div className="flex grow flex-col items-center gap-10 px-5 py-7">
       <Suspense fallback={<CardsSkeleton />}>
         <SummaryCardBox />
       </Suspense>
