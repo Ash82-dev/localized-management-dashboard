@@ -1,5 +1,10 @@
 import { api } from "@/lib/client";
-import { Record, RecordsParams, RecordsResponse } from "./types";
+import {
+  Record,
+  RecordsChartResponse,
+  RecordsParams,
+  RecordsResponse,
+} from "./types";
 import { RecordFormData } from "./schema";
 
 export async function getRecords({
@@ -28,4 +33,8 @@ export async function createRecord(record: RecordFormData) {
 
 export async function updateRecord(id: number, record: RecordFormData) {
   await api.patch<Record>(`/records/${id}`, record);
+}
+
+export async function getCategoryCountBarChartData(): Promise<RecordsChartResponse> {
+  return await api.get<RecordsChartResponse>("/charts/categories");
 }

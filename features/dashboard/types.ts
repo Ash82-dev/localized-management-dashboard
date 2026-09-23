@@ -13,13 +13,13 @@ export const categoryOptions = [
 export type Category = (typeof categoryOptions)[number];
 
 export interface Record {
-  id: number;
-  name: string;
-  category: Category;
-  status: Status;
-  score: number;
-  description: string;
-  createdAt: string;
+  id: number | null;
+  name: string | null;
+  category: Category | null;
+  status: Status | null;
+  score: number | null;
+  description: string | null;
+  createdAt: string | null;
 }
 
 interface Meta {
@@ -46,4 +46,13 @@ export interface RecordsParams {
 export interface RecordsSummary {
   label: string;
   value: number;
+}
+
+export interface RecordsChartData {
+  category: Category;
+  count: number;
+}
+
+export interface RecordsChartResponse {
+  data: RecordsChartData[];
 }
