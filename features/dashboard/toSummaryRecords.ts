@@ -1,3 +1,4 @@
+import { formatNumber } from "@/lib/number-formatter";
 import { RecordsResponse, RecordsSummary } from "./types";
 
 export function toSummaryRecords({
@@ -11,7 +12,8 @@ export function toSummaryRecords({
 
   const averageScore =
     records && records.length > 0
-      ? records.reduce((sum, record) => sum + record.score, 0) / records.length
+      ? records.reduce((sum, record) => sum + (record.score ?? 0), 0) /
+        records.length
       : 0;
 
   return [
@@ -25,7 +27,7 @@ export function toSummaryRecords({
     },
     {
       label: "average_scores",
-      value: averageScore,
+      value: formatNumber(averageScore),
     },
   ];
 }
