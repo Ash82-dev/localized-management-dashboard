@@ -41,7 +41,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                 locale={locale}
                 namespaces={["dashboard", "common"]}
               >
-                <main className="grid h-screen grid-cols-[auto_1fr]">
+                <main className="relative grid h-screen grid-cols-1 sm:grid-cols-[auto_1fr]">
                   <Sidebar direction={dir} />
 
                   <div className="grid min-h-0 grid-rows-[80px_1fr]">
