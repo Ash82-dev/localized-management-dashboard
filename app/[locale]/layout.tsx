@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import Header from "@/components/ui/Header";
 import Sidebar from "@/components/ui/Sidebar";
 import { DirectionProvider } from "@base-ui/react/direction-provider";
+import { inter, vazirmatn } from "./fonts";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -24,10 +25,10 @@ export default async function RootLayout({ children, params }: LayoutProps) {
     <html
       lang={locale}
       dir={dir}
-      className="antialiased"
+      className={`${inter.variable} ${vazirmatn.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body>
+      <body className={locale === "fa" ? "font-persian" : "font-sans"}>
         <TanstackProvider>
           <ThemeProvider
             attribute="class"

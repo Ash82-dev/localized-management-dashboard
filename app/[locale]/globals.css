@@ -121,6 +121,9 @@
 }
 
 @theme inline {
+  --font-sans: var(--font-inter);
+  --font-persian: var(--font-vazirmatn);
+
   --color-primary: var(--primary);
   --color-on-primary: var(--on-primary);
 
