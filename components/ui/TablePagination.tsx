@@ -68,9 +68,11 @@ function TablePagination({
   );
 
   return (
-    <div className="flex items-center justify-between gap-4">
+    <div className="flex flex-col-reverse items-center gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
       <div className="flex items-center gap-2">
-        <span className="text-sm text-on-surface">{t("rows_per_page")}</span>
+        <span className="text-sm whitespace-nowrap text-on-surface">
+          {t("rows_per_page")}
+        </span>
 
         <Select
           value={String(pageSize)}
@@ -78,7 +80,7 @@ function TablePagination({
             handlePageSizeChange(Number(value));
           }}
         >
-          <SelectTrigger className="w-25">
+          <SelectTrigger className="w-20">
             <SelectValue />
           </SelectTrigger>
 

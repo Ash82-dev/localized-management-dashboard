@@ -34,7 +34,7 @@ function TableActionsRow() {
   ];
 
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-0">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -73,7 +73,7 @@ function TableActionsRow() {
             updateParams({ status: value as Status }, true);
           }}
         >
-          <SelectTrigger className="w-30 rounded-sm">
+          <SelectTrigger className="w-full rounded-sm md:w-30">
             <SelectValue placeholder={t("filter_placeholder")} />
           </SelectTrigger>
           <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
