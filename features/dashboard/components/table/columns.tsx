@@ -49,7 +49,7 @@ export function getColumns(
           <Button
             variant="link"
             className="cursor-pointer"
-            onClick={() => onEdit(row.original.id)}
+            onClick={() => onEdit(row.original.id ?? 0)}
           >
             <SquarePenIcon className="h-4 w-4" />
           </Button>
