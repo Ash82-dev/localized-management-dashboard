@@ -10,6 +10,7 @@ import Header from "@/components/ui/Header";
 import Sidebar from "@/components/ui/Sidebar";
 import { DirectionProvider } from "@base-ui/react/direction-provider";
 import { inter, vazirmatn } from "./fonts";
+import AppToaster from "@/components/ui/AppToaster";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -52,6 +53,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
                     </section>
                   </div>
                 </main>
+                <AppToaster />
               </TranslationsProvider>
             </DirectionProvider>
           </ThemeProvider>

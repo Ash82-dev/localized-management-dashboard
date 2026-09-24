@@ -6,5 +6,7 @@
   "lbl_save": "Save",
   "lbl_search": "Search",
   "msg_field_required": "This field cannot be empty",
-  "msg_no_result": "No result found"
+  "msg_no_result": "No result found",
+  "msg_operation_failed": "Operation failed!",
+  "msg_operation_successful": "Operation Successful!"
 }

@@ -6,5 +6,7 @@
   "lbl_save": "ذخیره",
   "lbl_search": "جستجو",
   "msg_field_required": "این فیلد نمی‌تواند خالی باشد",
-  "msg_no_result": "نتیجه‌ای پیدا نشد"
+  "msg_no_result": "نتیجه‌ای پیدا نشد",
+  "msg_operation_failed": "عملیات ناموفق بود!",
+  "msg_operation_successful": "عملیات با موفقیت انجام شد!"
 }
