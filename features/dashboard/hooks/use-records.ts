@@ -4,10 +4,10 @@ import { RecordsParams } from "../types";
 import { queryKeys } from "@/constants";
 
 export function useRecords(params: RecordsParams) {
-  const { data, error } = useSuspenseQuery({
+  const { data } = useSuspenseQuery({
     queryKey: [queryKeys.getRecords, params],
     queryFn: () => getRecords(params),
   });
 
-  return { records: data, error };
+  return { records: data };
 }

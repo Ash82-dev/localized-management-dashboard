@@ -3,9 +3,11 @@
   "lbl_language": "زبان",
   "lbl_next": "بعدی",
   "lbl_previous": "قبلی",
+  "lbl_retry": "تلاش مجدد",
   "lbl_save": "ذخیره",
   "lbl_search": "جستجو",
   "msg_field_required": "این فیلد نمی‌تواند خالی باشد",
+  "msg_general_error": "مشکلی پیش آمده است!",
   "msg_no_result": "نتیجه‌ای پیدا نشد",
   "msg_operation_failed": "عملیات ناموفق بود!",
   "msg_operation_successful": "عملیات با موفقیت انجام شد!"

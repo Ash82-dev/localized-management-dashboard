@@ -1,25 +1,33 @@
 import { Suspense } from "react";
 import SummaryCardBox from "@/features/dashboard/components/SummaryCardBox";
 import RecordsTable from "@/features/dashboard/components/table/RecordsTable";
-import CardsSkeleton from "@/features/dashboard/components/skeletons/CardsSkeleton";
+import SummaryCardsBoxSkeleton from "@/features/dashboard/components/skeletons/SummaryCardsBoxSkeleton";
 import TableSkeleton from "@/features/dashboard/components/skeletons/TableSkeleton";
 import RecordsBarChart from "@/features/dashboard/components/RecordsBarChart";
 import ChartSkeleton from "@/features/dashboard/components/skeletons/ChartSkeleton";
+import QueryErrorBoundary from "@/features/dashboard/components/error/QueryErrorBoundary";
+import ErrorFallbackComponent from "@/features/dashboard/components/error/ErrorFallbackComponent";
 
-async function Page() {
+function Page() {
   return (
     <div className="flex grow flex-col items-center gap-20 px-5 py-7">
-      <Suspense fallback={<CardsSkeleton />}>
-        <SummaryCardBox />
-      </Suspense>
+      <QueryErrorBoundary fallback={<ErrorFallbackComponent />}>
+        <Suspense fallback={<SummaryCardsBoxSkeleton />}>
+          <SummaryCardBox />
+        </Suspense>
+      </QueryErrorBoundary>
 
-      <Suspense fallback={<TableSkeleton />}>
-        <RecordsTable />
-      </Suspense>
+      <QueryErrorBoundary fallback={<ErrorFallbackComponent />}>
+        <Suspense fallback={<TableSkeleton />}>
+          <RecordsTable />
+        </Suspense>
+      </QueryErrorBoundary>
 
-      <Suspense fallback={<ChartSkeleton />}>
-        <RecordsBarChart />
-      </Suspense>
+      <QueryErrorBoundary fallback={<ErrorFallbackComponent />}>
+        <Suspense fallback={<ChartSkeleton />}>
+          <RecordsBarChart />
+        </Suspense>
+      </QueryErrorBoundary>
     </div>
   );
 }

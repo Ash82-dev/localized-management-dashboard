@@ -3,9 +3,11 @@
   "lbl_language": "Language",
   "lbl_next": "Next",
   "lbl_previous": "Previous",
+  "lbl_retry": "Retry",
   "lbl_save": "Save",
   "lbl_search": "Search",
   "msg_field_required": "This field cannot be empty",
+  "msg_general_error": "Something went wrong!",
   "msg_no_result": "No result found",
   "msg_operation_failed": "Operation failed!",
   "msg_operation_successful": "Operation Successful!"
