@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/table";
 
 import { features, type DataTableFeatures } from "./DataTableFeatures";
+import { useTranslation } from "react-i18next";
 
 interface DataTableProps<TData extends RowData> {
   columns: ColumnDef<DataTableFeatures, TData>[];
@@ -22,6 +23,7 @@ export function DataTable<TData extends RowData>({
   columns,
   data,
 }: DataTableProps<TData>) {
+  const { t } = useTranslation();
   const table = useTable({
     features,
     data,
@@ -68,7 +70,7 @@ export function DataTable<TData extends RowData>({
           ) : (
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
-                No results.
+                {t("common:msg_no_result")}
               </TableCell>
             </TableRow>
           )}

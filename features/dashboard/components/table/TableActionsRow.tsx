@@ -28,9 +28,9 @@ function TableActionsRow() {
   const status = searchParams.get("status") ?? "all";
 
   const statusFilterOptions = [
-    { label: t("status_all_label"), value: "all" },
-    { label: t("status_active_label"), value: "active" },
-    { label: t("status_inactive_label"), value: "inactive" },
+    { label: t("lbl_status_all"), value: "all" },
+    { label: t("lbl_status_active"), value: "active" },
+    { label: t("lbl_status_inactive"), value: "inactive" },
   ];
 
   return (
@@ -48,10 +48,10 @@ function TableActionsRow() {
             name="search"
             type="search"
             className="rounded-sm"
-            placeholder={t("search_by_name")}
+            placeholder={t("lbl_search_name")}
           />
           <Button className="cursor-pointer rounded-sm" type="submit">
-            {t("common:search_label")}
+            {t("common:lbl_search")}
           </Button>
         </Field>
       </form>
@@ -61,7 +61,7 @@ function TableActionsRow() {
           className="cursor-pointer rounded-sm"
           onClick={() => setOpen(true)}
         >
-          {t("create_row_label")}
+          {t("lbl_create_row")}
         </Button>
         <RecordFormDialog isOpen={isOpen} setOpen={setOpen} />
 
@@ -74,7 +74,7 @@ function TableActionsRow() {
           }}
         >
           <SelectTrigger className="w-full rounded-sm md:w-30">
-            <SelectValue placeholder={t("filter_placeholder")} />
+            <SelectValue placeholder={t("lbl_filter_status")} />
           </SelectTrigger>
           <SelectContent className="rounded-sm" alignItemWithTrigger={false}>
             <SelectGroup>

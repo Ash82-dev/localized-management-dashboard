@@ -18,15 +18,15 @@ export function toSummaryRecords({
 
   return [
     {
-      label: "total_records",
+      label: "lbl_total_records",
       value: totalRecords,
     },
     {
-      label: "active_records",
+      label: "lbl_active_records",
       value: activeRecords,
     },
     {
-      label: "average_scores",
+      label: "lbl_average_scores",
       value: formatNumber(averageScore),
     },
   ];

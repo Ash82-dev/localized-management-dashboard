@@ -1,7 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 export interface SidebarItem {
-  text: "dashboard";
+  text: "lbl_dashboard";
   route: string;
   icon: LucideIcon;
 }

@@ -58,7 +58,7 @@ function LanguageSwitcher() {
       }}
     >
       <SelectTrigger className="w-25">
-        <SelectValue placeholder={t("common:language_placeholder")} />
+        <SelectValue placeholder={t("common:lbl_language")} />
       </SelectTrigger>
       <SelectContent alignItemWithTrigger={false}>
         <SelectGroup>

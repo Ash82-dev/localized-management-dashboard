@@ -94,8 +94,8 @@ function RecordFormDialog({ id, isOpen, setOpen }: RecordFormDialogProps) {
   }
 
   const statusOptions = [
-    { id: "active", label: t("status_active_label"), value: "active" },
-    { id: "inactive", label: t("status_inactive_label"), value: "inactive" },
+    { id: "active", label: t("lbl_status_active"), value: "active" },
+    { id: "inactive", label: t("lbl_status_inactive"), value: "inactive" },
   ];
 
   const categoryOptions = [

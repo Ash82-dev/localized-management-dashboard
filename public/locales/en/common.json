@@ -1,9 +1,10 @@
 {
-  "language_placeholder": "Language",
   "lbl_cancel": "Cancel",
+  "lbl_language": "Language",
+  "lbl_next": "Next",
+  "lbl_previous": "Previous",
   "lbl_save": "Save",
+  "lbl_search": "Search",
   "msg_field_required": "This field cannot be empty",
-  "next": "Next",
-  "previous": "Previous",
-  "search_label": "Search"
+  "msg_no_result": "No result found"
 }

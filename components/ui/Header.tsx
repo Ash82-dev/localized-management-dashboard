@@ -15,7 +15,7 @@ async function Header({ locale }: HeaderProps) {
     <header className="flex items-center justify-between border-b border-outline bg-background px-5">
       <h2 className="flex items-center gap-3 text-2xl font-semibold text-on-surface">
         <SidebarMenuIcon />
-        {t("dashboard")}
+        {t("lbl_dashboard")}
       </h2>
 
       <div className="flex items-center gap-7">

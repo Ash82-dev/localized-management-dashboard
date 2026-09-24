@@ -71,7 +71,7 @@ function TablePagination({
     <div className="flex flex-col-reverse items-center gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
       <div className="flex items-center gap-2">
         <span className="text-sm whitespace-nowrap text-on-surface">
-          {t("rows_per_page")}
+          {t("lbl_rows_per_page")}
         </span>
 
         <Select
@@ -99,7 +99,7 @@ function TablePagination({
           <PaginationItem>
             <PaginationPrevious
               href="#"
-              text={t("common:previous")}
+              text={t("common:lbl_previous")}
               onClick={(event) => {
                 event.preventDefault();
 
@@ -147,7 +147,7 @@ function TablePagination({
           <PaginationItem>
             <PaginationNext
               href="#"
-              text={t("common:next")}
+              text={t("common:lbl_next")}
               onClick={(event) => {
                 event.preventDefault();
                 handlePageChange(page + 1);

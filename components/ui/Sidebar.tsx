@@ -117,7 +117,7 @@ export default Sidebar;
 
 const sidebarItems: SidebarItem[] = [
   {
-    text: "dashboard",
+    text: "lbl_dashboard",
     route: "dashboard",
     icon: LayoutDashboard,
   },
