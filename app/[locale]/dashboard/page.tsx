@@ -6,24 +6,23 @@ import TableSkeleton from "@/features/dashboard/components/skeletons/TableSkelet
 import RecordsBarChart from "@/features/dashboard/components/RecordsBarChart";
 import ChartSkeleton from "@/features/dashboard/components/skeletons/ChartSkeleton";
 import QueryErrorBoundary from "@/features/dashboard/components/error/QueryErrorBoundary";
-import ErrorFallbackComponent from "@/features/dashboard/components/error/ErrorFallbackComponent";
 
 function Page() {
   return (
     <div className="flex grow flex-col items-center gap-20 px-5 py-7">
-      <QueryErrorBoundary fallback={<ErrorFallbackComponent />}>
+      <QueryErrorBoundary>
         <Suspense fallback={<SummaryCardsBoxSkeleton />}>
           <SummaryCardBox />
         </Suspense>
       </QueryErrorBoundary>
 
-      <QueryErrorBoundary fallback={<ErrorFallbackComponent />}>
+      <QueryErrorBoundary>
         <Suspense fallback={<TableSkeleton />}>
           <RecordsTable />
         </Suspense>
       </QueryErrorBoundary>
 
-      <QueryErrorBoundary fallback={<ErrorFallbackComponent />}>
+      <QueryErrorBoundary>
         <Suspense fallback={<ChartSkeleton />}>
           <RecordsBarChart />
         </Suspense>

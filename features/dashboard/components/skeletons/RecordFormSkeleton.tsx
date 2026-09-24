@@ -1,6 +1,6 @@
 function RecordFormSkeleton() {
   return (
-    <div className="flex flex-col gap-5 py-5">
+    <div className="flex flex-col gap-5">
       {Array.from({ length: 5 }, (_, i) => (
         <RecordFieldSkeleton key={i} />
       ))}

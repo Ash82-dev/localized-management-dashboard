@@ -1,12 +1,14 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useErrorBoundary } from "react-error-boundary";
 import { useTranslation } from "react-i18next";
+import { Button } from "@/components/ui/button";
 
-function ErrorFallbackComponent() {
+interface ErrorFallbackComponentProps {
+  onRetry: () => void;
+}
+
+function ErrorFallbackComponent({ onRetry }: ErrorFallbackComponentProps) {
   const { t } = useTranslation();
-  const { resetBoundary } = useErrorBoundary();
 
   return (
     <div className="flex w-full items-center justify-between rounded-sm border border-error bg-error/10 px-4 py-3">
@@ -17,9 +19,10 @@ function ErrorFallbackComponent() {
       </div>
 
       <Button
+        type="button"
         variant="outline"
         size="sm"
-        onClick={resetBoundary}
+        onClick={onRetry}
         className="text-error"
       >
         {t("common:lbl_retry")}

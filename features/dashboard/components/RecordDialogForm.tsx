@@ -44,6 +44,7 @@ import { toRecordFormData } from "../mappers";
 import { useCreateRecord } from "../hooks/use-create-record";
 import { useUpdateRecord } from "../hooks/use-update-record";
 import RecordFormSkeleton from "./skeletons/RecordFormSkeleton";
+import ErrorFallbackComponent from "./error/ErrorFallbackComponent";
 
 interface RecordFormDialogProps {
   id?: number;
@@ -52,7 +53,7 @@ interface RecordFormDialogProps {
 }
 
 function RecordFormDialog({ id, isOpen, setOpen }: RecordFormDialogProps) {
-  const { record, isLoading } = useRecord(id, isOpen);
+  const { record, isLoading, error, refetch } = useRecord(id, isOpen);
   const { createRecord, isCreating } = useCreateRecord();
   const { updateRecord, isUpdating } = useUpdateRecord();
   const isSubmitting = isCreating || isUpdating;
@@ -115,11 +116,15 @@ function RecordFormDialog({ id, isOpen, setOpen }: RecordFormDialogProps) {
               {id ? t("lbl_edit_modal_title") : t("lbl_create_modal_title")}
             </DialogTitle>
           </DialogHeader>
-          <div className="-mx-4 no-scrollbar max-h-[50vh] overflow-y-auto px-4">
+          <div className="-mx-4 no-scrollbar max-h-[50vh] overflow-y-auto px-4 py-5">
             {isLoading ? (
               <RecordFormSkeleton />
+            ) : error ? (
+              <div className="">
+                <ErrorFallbackComponent onRetry={refetch} />
+              </div>
             ) : (
-              <FieldGroup className="py-5">
+              <FieldGroup className="">
                 <Field>
                   <Label htmlFor="name">{t("lbl_name")}</Label>
                   <Input
@@ -221,6 +226,8 @@ function RecordFormDialog({ id, isOpen, setOpen }: RecordFormDialogProps) {
                   <Label htmlFor="score">{t("lbl_score")}</Label>
                   <Input
                     id="score"
+                    min={0}
+                    max={100}
                     type="number"
                     {...register("score", { valueAsNumber: true })}
                     aria-invalid={!!errors.score}
@@ -267,10 +274,12 @@ function RecordFormDialog({ id, isOpen, setOpen }: RecordFormDialogProps) {
           <DialogFooter className="rounded-b-sm">
             <DialogClose
               render={
-                <Button variant="outline">{t("common:lbl_cancel")}</Button>
+                <Button variant="outline" disabled={!!error}>
+                  {t("common:lbl_cancel")}
+                </Button>
               }
             />
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting || !!error}>
               {t("common:lbl_save")}
             </Button>
           </DialogFooter>

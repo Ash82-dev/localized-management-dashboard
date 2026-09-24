@@ -3,11 +3,16 @@ import { getRecord } from "../services";
 import { queryKeys } from "@/constants";
 
 export function useRecord(id?: number, enabled: boolean = false) {
-  const { data: record, isLoading } = useQuery({
+  const {
+    data: record,
+    isLoading,
+    error,
+    refetch,
+  } = useQuery({
     queryKey: [queryKeys.getRecord, id],
     queryFn: () => getRecord(id!),
     enabled: id !== undefined && enabled,
   });
 
-  return { record, isLoading };
+  return { record, isLoading, error, refetch };
 }
