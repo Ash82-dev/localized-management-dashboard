@@ -1,9 +1,10 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { getCategoryCountBarChartData } from "../services";
+import { queryKeys } from "@/constants";
 
 export function useRecordsChart() {
   const { data } = useSuspenseQuery({
-    queryKey: ["records-chart"],
+    queryKey: [queryKeys.getChart],
     queryFn: getCategoryCountBarChartData,
   });
 

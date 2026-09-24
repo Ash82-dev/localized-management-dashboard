@@ -1,6 +1,7 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { updateRecord as updateRecordApi } from "../services";
 import { RecordFormData } from "../schema";
+import { queryKeys } from "@/constants";
 
 export function useUpdateRecord() {
   const queryClient = useQueryClient();
@@ -10,11 +11,11 @@ export function useUpdateRecord() {
       updateRecordApi(id, record),
     onSuccess: (_, { id }) => {
       queryClient.invalidateQueries({
-        queryKey: ["records"],
+        queryKey: [queryKeys.getRecords],
       });
 
       queryClient.invalidateQueries({
-        queryKey: ["record", id],
+        queryKey: [queryKeys.getRecord, id],
       });
     },
   });
