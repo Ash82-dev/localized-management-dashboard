@@ -13,12 +13,17 @@ import {
 import { useRecordsChart } from "../hooks/use-records-chart";
 import { useTranslation } from "react-i18next";
 import { categoryColors, toLocalizedChartLabelKey } from "../mappers";
-import { Category } from "../types";
+import { Category, categoryOptions } from "../types";
 
 function RecordsBarChart() {
   const { t } = useTranslation();
   const { recordsChartData } = useRecordsChart();
-  const data = recordsChartData.data;
+  const isEmpty = recordsChartData.data.length === 0;
+  const data = !isEmpty
+    ? recordsChartData.data
+    : categoryOptions.map((category) => {
+        return { category, count: 0 };
+      });
 
   return (
     <div className="h-96 w-full rounded-sm bg-surface p-4 shadow-lg" dir="ltr">
@@ -30,6 +35,18 @@ function RecordsBarChart() {
             accessibilityLayer={false}
             style={{ width: "100%", height: "100%" }}
           >
+            {isEmpty && (
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="var(--on-background)"
+              >
+                {t("common:msg_no_result")}
+              </text>
+            )}
+
             <Tooltip content={CustomTooltip} cursor={false} />
 
             <XAxis
