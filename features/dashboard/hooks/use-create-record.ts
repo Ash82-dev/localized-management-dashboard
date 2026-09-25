@@ -16,6 +16,10 @@ export function useCreateRecord() {
         queryKey: [queryKeys.getRecords],
       });
 
+      queryClient.invalidateQueries({
+        queryKey: [queryKeys.getChart],
+      });
+
       toast.success(t("common:msg_operation_successful"));
     },
     onError: () => {
